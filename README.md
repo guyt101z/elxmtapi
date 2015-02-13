@@ -1,4 +1,4 @@
-# elxmtapi
+# elxmtapi - Elastix MT API
 
 Method
  - Login
