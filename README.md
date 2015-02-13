@@ -1,5 +1,7 @@
 # elxmtapi - Elastix MT API
 
+![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/logo/elxmtapi.png)
+
 Method
 
 <ol start="1">
