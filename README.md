@@ -1,8 +1,8 @@
 # elxmtapi - Elastix MT API
 
 Method
- - Login
- - UserDisable
- - UserEnable
- - Logout
- - CreateOrganization
+ * Login
+ * UserDisable
+ * UserEnable
+ * Logout
+ * CreateOrganization
