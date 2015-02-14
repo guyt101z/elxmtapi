@@ -296,6 +296,7 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
     $error=array();
     $req="Required Field: ";
     $bf="Bad Format: ";
+    global $arrCountry = $country;
 
     //parametros requeridos
     if(!isset($domain)){
@@ -319,6 +320,10 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
 
     if(!preg_match("/^(([[:alnum:]-]+)\.)+([[:alnum:]])+$/",$domain)){
         $error[]="domain";
+    }
+
+    if($country == getCountry()){
+        $error[]="country";
     }
 
     if(!preg_match("/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,4})+$/",$email_contact)){
