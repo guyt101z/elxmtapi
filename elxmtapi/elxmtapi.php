@@ -313,7 +313,7 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
         $result[0] = 'true';
     }
 
-    if(!preg_match("/^([a-zA-Z0-9]+[\s'.]?)+\S$/",$name)){
+    if(!preg_match("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]+[\s'.]?)+\S$/",$name)){
         $error[]="name";
     }
 
