@@ -66,20 +66,18 @@ if(isset($oResult->chain_session) && $oResult->chain_session != ''){
 }
 
 // Method 5.- CreateOrganization
-$result  = $client->call('CreateOrganization', array('chain_session' => $chain_session,
-                                                        'name'           => 'Elastix', // Organization
-                                                        'domain'         => 'elastix.org', // Domain Name
-                                                        'country'        => 'Ecuador', // Country
-                                                        'city'           => 'Guayaquil', // City
-                                                        'address'        => 'Doctor Teodoro Maldonado Carbo 222', // Address
-                                                        'country_code'   => 593,// Country Code. More info http://countrycode.org
-                                                        'area_code'      => 4, // Area Code. More info http://www.howtocallabroad.com/ecuador
-                                                        'quota'          => 30, // Email Quota By User(MB). By default 30MB.
-                                                        'email_contact'  => 'fpereira@elastix.org', // Email Contact
-                                                        'max_num_user'   => 0, // Max. # of User Accounts. The value 0 equals unlimited
-                                                        'max_num_exten'  => 0, // Max. # of extensions. The value 0 equals unlimited.
-                                                        'max_num_queues' => 0, // Max. # of queues. The value 0 equals unlimited.
-                                                        'admin_password' => 'PAkaPata822Ozu') // Admin Password.
+$result  = $client->call('CreateOrganization', array('name'           => 'Elastix', // Organization
+                                                     'domain'         => 'elastix.org', // Domain Name
+                                                     'country'        => 'Ecuador', // Country
+                                                     'city'           => 'Guayaquil', // City
+                                                     'address'        => 'Doctor Teodoro Maldonado Carbo 222', // Address
+                                                     'country_code'   => 593,// Country Code. More info http://countrycode.org
+                                                     'area_code'      => 4, // Area Code. More info http://www.howtocallabroad.com/ecuador
+                                                     'quota'          => 30, // Email Quota By User(MB). Default 30MB.
+                                                     'email_contact'  => 'lord.basex@gmail.com', // Email Contact
+                                                     'max_num_user'   => 0, // Max. # of User Accounts. The value 0 equals unlimited
+                                                     'max_num_exten'  => 0, // Max. # of extensions. The value 0 equals unlimited.
+                                                     'max_num_queues' => 0) // Max. # of queues. The value 0 equals unlimited.
 
                         );
 
