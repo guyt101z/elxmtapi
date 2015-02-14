@@ -296,7 +296,8 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
     $error=array();
     $req="Required Field: ";
     $bf="Bad Format: ";
-    global $arrCountry = $country;
+    $arrCountry = $country;
+    global $arrCountry;
 
     //parametros requeridos
     if(!isset($domain)){
