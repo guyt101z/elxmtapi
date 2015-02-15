@@ -1,5 +1,4 @@
-# elxmtapi - 
-Elastix MT API
+# elxmtapi - Elastix MT API
 
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/logo/elxmtapi.png)
 
@@ -9,6 +8,9 @@ Lord BaseX (c) 2014-2015
 This code is distributed under the GNU LGPL v3.0 license.
 
 ## Introduction
+
+
+## Installation
 
 Install the git package and follow the instructions.
 
@@ -24,7 +26,7 @@ mysql -uroot -p$mysqlrootpwd elxpbx < /usr/src/elxmtapi/db/elxmtapi.sql
 echo "INSERT INTO api_user (username, md5_password, create_date, last_login, minute_session, enabled) VALUES ('fpereira', md5('iperfex'), now(), NULL, 10, '1');" | mysql -uroot -p$mysqlrootpwd elxpbx
 ```
 
-Method
+## Method
 
 <h2>API</h2>
 
