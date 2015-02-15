@@ -48,4 +48,13 @@ echo "INSERT INTO api_user (username, md5_password, create_date, last_login, min
 
 <h2>Example</h2>
 
+```bash
+php /var/www/html/elxmtapi/example/example_1-4.php
+```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_1-4.png)
+
+```bash
+php /var/www/html/elxmtapi/example/example_5.php
+```
+![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_5.png)
+
