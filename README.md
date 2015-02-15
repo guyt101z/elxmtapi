@@ -2,6 +2,9 @@
 
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/logo/elxmtapi.png)
 
+
+
+
 Method
 
 <h2>API</h2>
@@ -21,3 +24,7 @@ Method
   <li>ShowOrganization</li>
   <li>ChangeStateOrganization</li>
 </ol>
+
+<h2>Example</h2>
+
+![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_1-4.png)
