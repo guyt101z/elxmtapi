@@ -61,7 +61,7 @@ then
 else
         $APP_ECHO "\n==== Checking updates ===="
         
-        cd $SRC_DIR
+        cd $GIT_SRC_DIR/elxmtapi
         $APP_GIT pull
 
         $APP_CP -fra $GIT_SRC_DIR/elxmtapi /var/www/html
