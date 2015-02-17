@@ -346,15 +346,7 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
                 if(!isset($resultCountryCode['code'])){
                     $error[]="The country code is wrong. Visit http://countrycode.org";
                 }
-    }
-
-    if(!preg_match("/^([0-9]+[\s'.]?)+\S$/",$country_code)){
-        $error[]="country_code";
-    }else{
-        $resultCountryCode = getCountrySettings($country);
-                if(!isset($resultCountryCode['code'])){
-                    $error[]="The country code is wrong. Visit http://countrycode.org";
-                }
+        }
     }
 
     if(isset($area_code)){
