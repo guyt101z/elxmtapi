@@ -326,7 +326,7 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
     }else{
         $resultCountryName = getCountrySettings($country);
                 if(!isset($resultCountryName['code'])){
-                    $error[]="The country name is incorrect. Visit http://countrycode.org"
+                    $error[]="The country name is incorrect. Visit http://countrycode.org";
                 }
     }
 
@@ -343,7 +343,7 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
     }else{
         $resultCountryCode = getCountrySettings($country);
                 if(!isset($resultCountryCode['code'])){
-                    $error[]="The country code is wrong. Visit http://countrycode.org"
+                    $error[]="The country code is wrong. Visit http://countrycode.org";
                 }
     }
 
