@@ -340,12 +340,12 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
 
     if(isset($country_code)){
         if(!ctype_digit($country_code)){
-                $error[]="country_code (digit)";
+            $error[]="country_code (digit)";
         }else{
-                $resultCountryCode = getCountrySettings($country);
-                if(!isset($resultCountryCode['code'])){
-                    $error[]="The country code is wrong. Visit http://countrycode.org";
-                }
+            $resultCountryCode = getCountrySettings($country);
+            if($resultCountryCode['code'] != $country_code){
+                $error[]="The country code is wrong. Visit http://countrycode.org";
+            }
         }
     }
 
