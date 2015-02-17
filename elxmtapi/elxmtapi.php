@@ -282,7 +282,7 @@ function CreateOrganization($name, $domain, $country, $city, $address, $country_
 /**********************************************************************/
 
 // function to generate password random
-function random_password( $length = 10 ) 
+function random_password( $length = 10 )
 {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     $password = substr( str_shuffle( $chars ), 0, $length );
@@ -296,8 +296,6 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
     $error=array();
     $req="Required Field: ";
     $bf="Bad Format: ";
-    $arrCountry = $country;
-    global $arrCountry;
 
     //parametros requeridos
     if(!isset($domain)){
@@ -323,18 +321,44 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
         $error[]="domain";
     }
 
-    if($country == getCountry()){
+    if(!preg_match("/^([a-zA-Z]+[\s'.]?)+\S$/",$country)){
         $error[]="country";
+    }else{
+        $resultCountryName = getCountrySettings($country);
+                if(!isset($resultCountryName['code'])){
+                    $error[]="The country name is incorrect. Visit http://countrycode.org"
+                }
     }
 
-    if(!preg_match("/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,4})+$/",$email_contact)){
-        $error[]="email_contact";
+    if(!preg_match("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]+[\s'.]?)+\S$/",$city)){
+        $error[]="city";
+    }
+
+    if(!preg_match("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]+[\s'.]?)+\S$/",$address)){
+        $error[]="address";
+    }
+
+    if(!preg_match("/^([0-9]+[\s'.]?)+\S$/",$country_code)){
+        $error[]="country_code";
+    }else{
+        $resultCountryCode = getCountrySettings($country);
+                if(!isset($resultCountryCode['code'])){
+                    $error[]="The country code is wrong. Visit http://countrycode.org"
+                }
+    }
+
+    if(!preg_match("/^([0-9]+[\s'.]?)+\S$/",$area_code)){
+        $error[]="country_code";
     }
 
     if(isset($quota)){
         if(!ctype_digit($quota) || ($quota+0)==0){
                 $error[]="quota (digit > 0)";
         }
+    }
+
+    if(!preg_match("/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,4})+$/",$email_contact)){
+        $error[]="email_contact";
     }
 
     if(isset($max_num_user)){
