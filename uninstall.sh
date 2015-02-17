@@ -32,7 +32,7 @@ HTTP_SRC_DIR=/var/www/html/elxmtapi
 
 APP_ECHO=/bin/echo
 APP_RM=/bin/rm
-$APP_MYSQL=/usr/bin/mysql
+APP_MYSQL=/usr/bin/mysql
 
 $APP_RM -fr $HTTP_SRC_DIR
 $APP_RM -fr $GIT_SRC_DIR
