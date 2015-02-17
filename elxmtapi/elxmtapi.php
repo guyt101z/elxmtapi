@@ -322,7 +322,7 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
     }
 
     if(!preg_match("/^([a-zA-Z]+[\s'.]?)+\S$/",$country)){
-        $error[]="country";
+        $error[]="country ->$country<-";
     }else{
         $resultCountryName = getCountrySettings($country);
                 if(!isset($resultCountryName['code'])){
@@ -338,6 +338,16 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
         $error[]="address";
     }
 
+    if(isset($country_code)){
+        if(!ctype_digit($country_code)){
+                $error[]="country_code (digit)";
+        }else{
+                $resultCountryCode = getCountrySettings($country);
+                if(!isset($resultCountryCode['code'])){
+                    $error[]="The country code is wrong. Visit http://countrycode.org";
+                }
+    }
+
     if(!preg_match("/^([0-9]+[\s'.]?)+\S$/",$country_code)){
         $error[]="country_code";
     }else{
@@ -347,8 +357,10 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
                 }
     }
 
-    if(!preg_match("/^([0-9]+[\s'.]?)+\S$/",$area_code)){
-        $error[]="country_code";
+    if(isset($area_code)){
+        if(!ctype_digit($area_code)){
+                $error[]="area_code (digit)";
+        }
     }
 
     if(isset($quota)){
