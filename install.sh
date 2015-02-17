@@ -38,10 +38,10 @@ APP_CHOWN=/bin/chown
 APP_CHMOD=/bin/chmod
 APP_CP=/bin/cp
 
-$APP_ECHO -e "\n==== Download git ELXMTAPI ===="
 if [ ! -d $GIT_SRC_DIR/.git ]
 then
-        $APP_ECHO -e "\n==== Install tool packages ===="
+	$APP_ECHO  "==== Download git ELXMTAPI ===="
+        $APP_ECHO  "-->Install tool packages<--"
         $APP_YUM install git -y
 
         cd $SRC_DIR
@@ -59,7 +59,7 @@ then
 
 
 else
-        $APP_ECHO "\n==== Checking updates ===="
+        $APP_ECHO "==== Checking updates ===="
         
         cd $GIT_SRC_DIR/elxmtapi
         $APP_GIT pull
