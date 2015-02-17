@@ -60,7 +60,9 @@ then
 
 else
         $APP_ECHO "\n==== Checking updates ===="
-  $APP_GIT pull
+        
+        cd $SRC_DIR
+        $APP_GIT pull
 
         $APP_CP -fra $GIT_SRC_DIR/elxmtapi /var/www/html
         $APP_CHOWN asterisk:asterisk -R /var/www/html/elxmtapi
