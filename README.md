@@ -15,6 +15,16 @@ This code is distributed under the GNU LGPL v3.0 license.
 Install the git package and follow the instructions.
 
 ```bash
+/usr/src
+wget https://raw.githubusercontent.com/lordbasex/elxmtapi/master/install.sh --no-check-certificate -O /usr/src/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+OR
+
+
+```bash
 cd /usr/src/
 yum -y install git
 git clone https://github.com/lordbasex/elxmtapi.git
