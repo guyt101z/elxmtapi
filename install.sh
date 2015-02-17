@@ -55,7 +55,7 @@ then
   $APP_MYSQL -uroot -p$mysqlrootpwd elxpbx < /usr/src/elxmtapi/db/elxmtapi.sql
   $APP_ECHO "INSERT INTO api_user (username, md5_password, create_date, last_login, minute_session, enabled) VALUES ('fpereira', md5('iperfex'), now(), NULL, 10, '1');" | $APP_MYSQL -uroot -p$mysqlrootpwd elxpbx
 
-  $APP_ECHO "\n -->Complete installation<--"
+  $APP_ECHO "-->Complete installation<--"
 
 
 else
@@ -66,7 +66,7 @@ else
         $APP_CHOWN asterisk:asterisk -R /var/www/html/elxmtapi
         $APP_CHMOD +x /var/www/html/elxmtapi/elxmtapi.php
 
-  $APP_ECHO "\n -->Complete update<--"
+  $APP_ECHO "-->Complete update<--"
 
 fi
 
