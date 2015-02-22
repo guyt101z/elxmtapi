@@ -1,15 +1,14 @@
 #!/bin/bash
 #  /* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
-#  Codificación: UTF-8
 #
 #  @name        ElastixMT API
-#  
+#
 #  @copyright   Copyright (C) 2012-2015 - Federico Pereira - LordBaseX
 #  @author      Federico Pereira <lord.basex@gmail.com>
 #  @license     http://opensource.org/licenses/GPL-3.0
 #  @package     elxmtapi.php
-#  @version     1.0
-#  
+#  @version     1.1
+#
 #  +----------------------------------------------------------------------+
 #  | Elastix version 2.2.0-29                                             |
 #  | http://www.elastix.org                                               |
@@ -34,7 +33,7 @@
 #  | The Original Code is: Elastix Open Source.                           |
 #  | The Initial Developer of the Original Code is PaloSanto Solutions    |
 #  +----------------------------------------------------------------------+
-#  $Id: install.sh,v 1.0 2015-02-17 15:22:13 Federico Pereira fpereira@iperfex.com Exp $ */
+#  $Id: install.sh,v 1.1 2015-02-22 16:46:13 Federico Pereira fpereira@iperfex.com Exp $ */
 
 GIT_SRC_DIR=/usr/src/elxmtapi
 SRC_DIR=/usr/src
@@ -42,19 +41,24 @@ SRC_DIR=/usr/src
 APP_ECHO=/bin/echo
 APP_GIT=/usr/bin/git
 APP_YUM=/usr/bin/yum
+APP_RPM=/bin/rpm
 APP_MYSQL=/usr/bin/mysql
 APP_CHOWN=/bin/chown
 APP_CHMOD=/bin/chmod
 APP_CP=/bin/cp
+APP_GREP=/bin/grep
 
 if [ ! -d $GIT_SRC_DIR/.git ]
 then
-	$APP_ECHO  "==== Download git ELXMTAPI ===="
-        $APP_ECHO  "-->Install tool packages<--"
-        $APP_YUM install git -y
 
-        cd $SRC_DIR
-        $APP_GIT clone https://github.com/lordbasex/elxmtapi.git
+  if ! $APP_RPM -qa | $APP_GREP -qw git; then
+  	$APP_ECHO  "-->Install tool packages<--"
+        $APP_YUM install git -y
+  fi
+
+  $APP_ECHO  "==== Download git ELXMTAPI ===="
+  cd $SRC_DIR
+  $APP_GIT clone https://github.com/lordbasex/elxmtapi.git
 
   $APP_CP -fra $GIT_SRC_DIR/elxmtapi /var/www/html
   $APP_CHOWN asterisk:asterisk -R /var/www/html/elxmtapi
@@ -69,7 +73,7 @@ then
 
 else
         $APP_ECHO "==== Checking updates ===="
-        
+
         cd $GIT_SRC_DIR/elxmtapi
         $APP_GIT pull
 
