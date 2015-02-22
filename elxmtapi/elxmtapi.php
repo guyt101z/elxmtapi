@@ -140,6 +140,19 @@ $server->register('DeleteOrganization',
                   'Delete Organization'                    // documentation
 );
 
+// Method 7.- ShowOrganization
+$server->register('ShowOrganization',
+            array('name'           => 'xsd:string',        // input parameters
+                  'domain'         => 'xsd:string',        // input parameters
+                  'state'          => 'xsd:string'),       // input parameters
+            array('response'       => 'xsd:string'),       // output parameters
+                  'urn:elxmtapi_wsdl',                     // namespace
+                  'urn:elxmtapi_wsdl#ShowOrganization',    // soapaction
+                  'rpc',                                   // style
+                  'encoded',                               // use
+                  'ShowOrganization'                       // documentation
+);
+
 // Method 8.- ChangeStateOrganization
 $server->register('ChangeStateOrganization',
             array('domain'         => 'xsd:string',        // input parameters
