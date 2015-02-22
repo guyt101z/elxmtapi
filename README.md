@@ -78,6 +78,26 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 
 | Code  | Method  | Message |
 | :------------ |:---------------:| -----:|
-| 400      | some wordy text | $1600 |
-| 401      | centered        |   $12 |
-| 402      | are neat        |    $1 |
+| 400      | Login | Authenticated user.|
+| 401      | UserDisable| User has been disabled.|
+| 402      | UserEnable | User has been enabled.|
+| 403      | Logout | Session completed successfully.|
+| 404      | CreateOrganization | Creation organization completed successfully.|
+| 405      | ChangeStateOrganization| Change State 'suspend/unsuspend/terminate' completed successfully. |
+| 406      |  - | - |
+| 407      |  - | - |
+| 408      |  - | - |
+| 409      |  - | - |
+| 410      |  - | - |
+| 500      | Login | Unregistered user.|
+| 501      | Login | User not authenticated.|
+| 502      |  -  |  -  |
+| 503      | Logout | It was not possible to conclude session.|
+| 504      | CreateOrganization | Required Field: name, domain, country, city, address, country_code, area_code, quota, email_contact, max_num_user, max_num_exten, max_num_queues, admin_password |
+| 505      | CreateOrganization | Already exist other organization with the same domain.|
+| 506      | CreateOrganization | Asterisk can't be reloaded.|
+| 507      | ChangeStateOrganization | Required Field: Domain incorrect,Invalid Organization State|
+| 508      | - | - |
+| 509      | - | - |
+| 510      | - | - |
+
