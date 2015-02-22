@@ -64,6 +64,6 @@ php /usr/src/elxmtapi/example/Login_and_Login.php
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_1-4.png)
 
 ```bash
-php /usr/src/elxmtapi/example/Login_and_Login.php
+php /usr/src/elxmtapi/example/CreateOrganization.php
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_5.png)
