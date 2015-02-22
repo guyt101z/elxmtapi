@@ -75,7 +75,7 @@ if(isset($oResult->chain_session) && $oResult->chain_session != ''){
 // Method 7.- ShowOrganization
 $result  = $client->call('ShowOrganization', array('name'   => '',     // Organization
 						   'domain' => '',     // Domain Name
-						   'state'  => 'all',  // State. Argument: all, active, suspend, terminate
+						   'state'  => 'all')  // State. Argument: all, active, suspend, terminate
                         );
 
 $oResult = $json->decode($result);
