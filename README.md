@@ -74,7 +74,7 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_8.png)
 
-<h2>Code</h2>
+<h2> Message Code</h2>
 
 | Code  | Method  | Message |
 | :------------ |:---------------:| :-----: |
@@ -83,8 +83,8 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 | 402      | UserEnable | User has been enabled.|
 | 403      | Logout | Session completed successfully.|
 | 404      | CreateOrganization | Creation organization completed successfully.|
-| 405      | ChangeStateOrganization| Change State 'suspend/unsuspend/terminate' completed successfully. |
-| 406      |  - | - |
+| 405      | ChangeStateOrganization| Change State 'suspend/unsuspend/terminate' completed successfully.|
+| 406      | DeleteOrganization | Delete Organization completed successfully.|
 | 407      |  - | - |
 | 408      |  - | - |
 | 409      |  - | - |
@@ -97,7 +97,7 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 | 505      | CreateOrganization | Already exist other organization with the same domain.|
 | 506      | CreateOrganization | Asterisk can't be reloaded.|
 | 507      | ChangeStateOrganization | Required Field: Domain incorrect,Invalid Organization State|
-| 508      | - | - |
-| 509      | - | - |
+| 508      | DeleteOrganization | Required Field: Domain incorrect|
+| 509      | DeleteOrganization | ? |
 | 510      | - | - |
 
