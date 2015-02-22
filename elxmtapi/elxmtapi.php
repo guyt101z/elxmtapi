@@ -258,10 +258,18 @@ function CreateOrganization($name, $domain, $country, $city, $address, $country_
         $result = $pOrganization->createOrganization($name, $domain, $country, $city, $address, $country_code, $area_code, $quota, $email_contact, $max_num_user, $max_num_exten, $max_num_queues, $admin_password);
 
         if($result != ""){
-                $arrReturn = array('createorganization' => 'Yes',
-                                                 'code' => '404',
-                                             'password' => $admin_password,
-                                              'message' => 'Creation organization completed successfully.');
+                $check_reloadDialplan = AsteriskReloadDialplan($domain);
+                if($check_reloadDialplan == 'true'){
+                        $arrReturn = array('createorganization' => 'Yes',
+                                                         'code' => '404',
+                                                     'password' => $admin_password,
+                                                      'message' => 'Creation organization completed successfully.');
+                }else{
+                        $arrReturn = array('createorganization' => 'No',
+                                                         'code' => '506',
+                                                      'message' => 'Asterisk can\'t be reloaded.');
+                }
+
         }else{
                 $arrReturn = array('createorganization' => 'No',
                                                  'code' => '505',
@@ -394,6 +402,27 @@ function validateParams($name, $domain, $country, $city, $address, $country_code
         $result[0] = 'true';
         return $result;
     }
+}
+
+// function AsteriskReloadDialplan
+function AsteriskReloadDialplan($domain)
+{
+    global $pDB;
+    global $json;
+
+    $pAstConf = new paloSantoASteriskConfig($pDB);
+
+    if($pAstConf->generateDialplan($domain)===false){
+        $pAstConf->setReloadDialplan($domain,true);
+        $result = 'false';
+    }else{
+        $pAstConf->setReloadDialplan($domain);
+        $result = 'true';
+
+    }
+
+    return $result;
+
 }
 
 ?>
