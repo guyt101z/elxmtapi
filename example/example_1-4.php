@@ -1,6 +1,13 @@
 <?php
   /* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
-  Codificación: UTF-8
+   * @name        ElastixMT API
+   *
+   * @copyright   Copyright (C) 2012-2015 - Federico Pereira - LordBaseX
+   * @author      Federico Pereira <lord.basex@gmail.com>
+   * @license     http://opensource.org/licenses/GPL-3.0
+   * @package     elxmtapi.php
+   * @version     1.0
+   *
   +----------------------------------------------------------------------+
   | Elastix version 2.2.0-29                                             |
   | http://www.elastix.org                                               |
