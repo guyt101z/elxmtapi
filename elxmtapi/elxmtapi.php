@@ -129,6 +129,17 @@ $server->register('CreateOrganization',
                   'Create Organization'                    // documentation
 );
 
+// Method 6.- DeleteOrganization
+$server->register('DeleteOrganization',
+            array('domain'         => 'xsd:string'),       // input parameters
+            array('response'       => 'xsd:string'),       // output parameters
+                  'urn:elxmtapi_wsdl',                     // namespace
+                  'urn:elxmtapi_wsdl#DeleteOrganization',  // soapaction
+                  'rpc',                                   // style
+                  'encoded',                               // use
+                  'Delete Organization'                    // documentation
+);
+
 // Method 8.- ChangeStateOrganization
 $server->register('ChangeStateOrganization',
             array('domain'         => 'xsd:string',        // input parameters
@@ -185,11 +196,11 @@ function Login($user, $password)
 
     }elseif($result['enabled'] == 0){
         $arrReturn = array('login'   => 'No',
-                           'code'    => '501',
+                           'code'    => '500',
                            'message' => 'Unregistered user.');
     }else{
         $arrReturn = array('login'   => 'No',
-                           'code'    => '502',
+                           'code'    => '501',
                            'message' => 'User not authenticated.');
 
     }
@@ -298,6 +309,45 @@ function CreateOrganization($name, $domain, $country, $city, $address, $country_
 
     return $json->encode($arrReturn);
 
+}
+
+// Method 6.- DeleteOrganization
+function DeleteOrganization($domain)
+{
+    global $pDB;
+    global $json;
+
+    $error = array();
+    $req = "Required Field: ";
+
+    if(!preg_match("/^(([[:alnum:]-]+)\.)+([[:alnum:]])+$/",$domain)){
+        $error[]="Domain incorrect";
+    }
+
+    if(count($error)!=0){
+        $errMsg = $req.implode(",",$error);
+        $arrReturn = array('deleteorganization' => 'No',
+                                         'code' => '508',
+                                      'message' => $errMsg);
+    }else{
+        $pOrganization = new paloSantoOrganization($pDB);
+        $resultGetIdByDomain = $pOrganization->getIdOrgByDomain($domain);
+
+        ChangeStateOrganization($domain,'terminate');
+
+        $resultDeleteOrganization = $pOrganization->deleteOrganization($resultGetIdByDomain['id']);
+
+        if(!$resultDeleteOrganization){
+            $arrReturn = array('deleteorganization' => 'No',
+                                             'code' => '509',
+                                          'message' => 'Domain not found.');
+        }else{
+            $arrReturn = array('deleteorganization' => 'Yes',
+                                             'code' => '406',
+                                          'message' => 'Delete Organization completed successfully.');
+        }
+    }
+    return $json->encode($arrReturn);
 }
 
 // Method 8.- ChangeStateOrganization
