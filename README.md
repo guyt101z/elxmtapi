@@ -58,16 +58,25 @@ echo "INSERT INTO api_user (username, md5_password, create_date, last_login, min
 
 <h2>Example</h2>
 
+<h4>1- Login & 4- Logout</h4>
 ```bash
 php /usr/src/elxmtapi/example/Login_and_Login.php
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_1-4.png)
 
+<h4>5- CreateOrganization</h4>
 ```bash
 php /usr/src/elxmtapi/example/CreateOrganization.php
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_5.png)
 
+<h4>6- Logout</h4>
+```bash
+php /usr/src/elxmtapi/example/DeleteOrganization.php
+```
+![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_6.png)
+
+<h4>8- ChangeStateOrganization</h4>
 ```bash
 php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 
