@@ -73,3 +73,11 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_8.png)
+
+<h2>Code</h2>
+
+| Code  | Method  | Message |
+| :------------ |:---------------:| -----:|
+| 400      | some wordy text | $1600 |
+| 401      | centered        |   $12 |
+| 402      | are neat        |    $1 |
