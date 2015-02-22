@@ -77,7 +77,7 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 <h2>Code</h2>
 
 | Code  | Method  | Message |
-| :------------ |:---------------:| :-----|
+| :------------ |:---------------:| :-----: |
 | 400      | Login | Authenticated user.|
 | 401      | UserDisable| User has been disabled.|
 | 402      | UserEnable | User has been enabled.|
