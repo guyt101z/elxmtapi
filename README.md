@@ -5,7 +5,7 @@
 Lord BaseX (c) 2014-2015
  Federico Pereira <lord.basex@gmail.com>
  
- Unite a nuestra grupo google elxmtapi <elxmtapi@googlegroups.com>
+ Join our Google Group <elxmtapi@googlegroups.com>
 
 This code is distributed under the GNU LGPL v3.0 license.
 
