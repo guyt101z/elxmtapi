@@ -76,6 +76,8 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 
 <h2> Message Code</h2>
 
+<h3>Return</h3>
+
 | Code  | Method  | Message |
 | :------------ |:---------------:| :-----: |
 | 400      | Login | Authenticated user.|
@@ -89,6 +91,11 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 | 408      |  - | - |
 | 409      |  - | - |
 | 410      |  - | - |
+
+<h3>Return Error</h3>
+
+| Code  | Method  | Message |
+| :------------ |:---------------:| :-----: |
 | 500      | Login | Unregistered user.|
 | 501      | Login | User not authenticated.|
 | 502      |  -  |  -  |
