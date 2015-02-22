@@ -150,7 +150,7 @@ $server->register('ShowOrganization',
                   'urn:elxmtapi_wsdl#ShowOrganization',    // soapaction
                   'rpc',                                   // style
                   'encoded',                               // use
-                  'ShowOrganization'                       // documentation
+                  'Show Organization'                      // documentation
 );
 
 // Method 8.- ChangeStateOrganization
@@ -361,6 +361,60 @@ function DeleteOrganization($domain)
         }
     }
     return $json->encode($arrReturn);
+}
+
+// Method 7.- ShowOrganization
+function ShowOrganization($name, $domain, $state)
+{
+    global $pDB;
+    global $json;
+
+    $error = array();
+    $req = "Required Field: ";
+
+    //not required field
+    if(!isset($name)){
+        if(!preg_match("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]+[\s'.]?)+\S$/",$name)){
+            $error[]="name";
+        }
+    }
+
+    if(!isset($domain)){
+        if(!preg_match("/^(([[:alnum:]-]+)\.)+([[:alnum:]])+$/",$domain)){
+            $error[]="Domain incorrect";
+        }
+    }
+
+    //required field
+    if(!($state == "all" || $state == "active" || $state == "suspend" || $state == "terminate" )){
+        $error[] = "Invalid Organization State. Argument: all, active, suspend, terminate";
+    }
+
+    if(count($error)!=0){
+        $errMsg = $req.implode(",",$error);
+        $arrReturn = array('changestateorganization' => 'No',
+                                              'code' => '510',
+                                           'message' => $errMsg);
+    }else{
+        $pOrganization = new paloSantoOrganization($pDB);
+        //$resultGetIdByDomain = $pOrganization->getIdOrgByDomain($domain);
+
+        //$id = $resultGetIdByDomain;
+        //$resultChangeStateOrganization = $pOrganization->changeStateOrganization($id, $state);
+/*
+        if(!$resultChangeStateOrganization){
+            $arrReturn = array('changestateorganization' => 'No',
+                                                  'code' => '508',
+                                               'message' => $pOrganization->errMsg);
+        }else{
+            $arrReturn = array('changestateorganization' => 'Yes',
+                                                  'code' => '405',
+                                               'message' => 'Change State '.$state.' completed successfully.');
+        }
+    }
+*/
+    return $json->encode($arrReturn);
+
 }
 
 // Method 8.- ChangeStateOrganization
