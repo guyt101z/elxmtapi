@@ -105,6 +105,6 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 | 506      | CreateOrganization | Asterisk can't be reloaded.|
 | 507      | ChangeStateOrganization | Required Field: Domain incorrect,Invalid Organization State|
 | 508      | DeleteOrganization | Required Field: Domain incorrect|
-| 509      | DeleteOrganization | ? |
+| 509      | DeleteOrganization | Domain not found. |
 | 510      | - | - |
 
