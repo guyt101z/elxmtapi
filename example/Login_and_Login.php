@@ -5,7 +5,7 @@
    * @copyright   Copyright (C) 2012-2015 - Federico Pereira - LordBaseX
    * @author      Federico Pereira <lord.basex@gmail.com>
    * @license     http://opensource.org/licenses/GPL-3.0
-   * @package     elxmtapi.php
+   * @package     Login_and_Login.php
    * @version     1.0
    *
   +----------------------------------------------------------------------+
@@ -32,7 +32,7 @@
   | The Original Code is: Elastix Open Source.                           |
   | The Initial Developer of the Original Code is PaloSanto Solutions    |
   +----------------------------------------------------------------------+
-  $Id: example_1-4.php,v 1.1 2015-02-13 14:05:13 Federico Pereira fpereira@iperfex.com Exp $ */
+  $Id: Login_and_Login.php,v 1.1 2015-02-13 14:05:13 Federico Pereira fpereira@iperfex.com Exp $ */
 
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
