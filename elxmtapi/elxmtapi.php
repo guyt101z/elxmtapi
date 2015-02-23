@@ -364,7 +364,7 @@ function DeleteOrganization($domain)
 }
 
 // Method 7.- ShowOrganization
-function ShowOrganization($name, $domain, $state)
+function ShowOrganization($name = NULL, $domain = NULL, $state)
 {
     global $pDB;
     global $json;
@@ -373,16 +373,16 @@ function ShowOrganization($name, $domain, $state)
     $req = "Required Field: ";
 
     //not required field
-    if(!isset($name)){
-        if(!preg_match("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]+[\s'.]?)+\S$/",$name)){
-            $error[]="name";
-        }
+    if($name != NULL ){
+            if(!preg_match("/^([a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]+[\s'.]?)+\S$/",$name)){
+                $error[]="name. unsupported characters.";
+            }
     }
 
-    if(!isset($domain)){
-        if(!preg_match("/^(([[:alnum:]-]+)\.)+([[:alnum:]])+$/",$domain)){
-            $error[]="Domain incorrect";
-        }
+    if($domain != NULL ){
+            if(!preg_match("/^(([[:alnum:]-]+)\.)+([[:alnum:]])+$/",$domain)){
+                $error[]="domain incorrect";
+            }
     }
 
     //required field
