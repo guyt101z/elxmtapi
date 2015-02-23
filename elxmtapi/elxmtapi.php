@@ -413,7 +413,7 @@ function ShowOrganization($name, $domain, $state)
         }
 */
     }
-*/
+
     return $json->encode($arrReturn);
 
 }
