@@ -411,6 +411,7 @@ function ShowOrganization($name, $domain, $state)
                                                   'code' => '405',
                                                'message' => 'Change State '.$state.' completed successfully.');
         }
+*/
     }
 */
     return $json->encode($arrReturn);
