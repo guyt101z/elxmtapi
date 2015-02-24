@@ -81,7 +81,7 @@ $result  = $client->call('ShowOrganization', array('name'   => '',     // Organi
 $oResult = $json->decode($result);
 
 if($see_results){
-    echo "Result DeleteOrganization:\n";
+    echo "Result ShowOrganization:\n";
     print_r($oResult);
 }
 
