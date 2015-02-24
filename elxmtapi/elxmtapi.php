@@ -407,7 +407,7 @@ function ShowOrganization($name = NULL, $domain = NULL, $state)
         }else{
             $arrReturn = array('changestateorganization' => 'Yes',
                                                   'code' => '407',
-                                         'organizations' => count($resultGetOrganization);
+                                         'organizations' => count($resultGetOrganization),
                                                'message' => $resultGetOrganization);
         }
     }
