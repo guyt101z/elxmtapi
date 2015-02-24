@@ -368,7 +368,6 @@ function ShowOrganization($name = NULL, $domain = NULL, $state)
 {
     global $pDB;
     global $json;
-
     $error = array();
     $req = "Required Field: ";
 
@@ -396,22 +395,21 @@ function ShowOrganization($name = NULL, $domain = NULL, $state)
                                               'code' => '510',
                                            'message' => $errMsg);
     }else{
-        $pOrganization = new paloSantoOrganization($pDB);
-        //$resultGetIdByDomain = $pOrganization->getIdOrgByDomain($domain);
 
-        //$id = $resultGetIdByDomain;
-        //$resultChangeStateOrganization = $pOrganization->changeStateOrganization($id, $state);
-/*
-        if(!$resultChangeStateOrganization){
+        $pOrganization = new paloSantoOrganization($pDB);
+        $showArray = array('name' => $name, 'domain' => $domain, 'state' => $state );
+        $resultGetOrganization = $pOrganization->getOrganization($showArray);
+
+        if(!$resultGetOrganization){
             $arrReturn = array('changestateorganization' => 'No',
-                                                  'code' => '508',
-                                               'message' => $pOrganization->errMsg);
+                                                  'code' => '511',
+                                               'message' => 'No Matches found.');
         }else{
             $arrReturn = array('changestateorganization' => 'Yes',
-                                                  'code' => '405',
-                                               'message' => 'Change State '.$state.' completed successfully.');
+                                                  'code' => '407',
+                                         'organizations' => count($resultGetOrganization);
+                                               'message' => $resultGetOrganization);
         }
-*/
     }
 
     return $json->encode($arrReturn);
