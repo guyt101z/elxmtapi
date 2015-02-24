@@ -4,7 +4,7 @@
 
 Lord BaseX (c) 2014-2015
  Federico Pereira <lord.basex@gmail.com>
- 
+
  Join our Google Group <elxmtapi@googlegroups.com>
 
 This code is distributed under the GNU LGPL v3.0 license.
@@ -79,6 +79,12 @@ php /usr/src/elxmtapi/example/DeleteOrganization.php
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_6.png)
 
+<h4>7- ShowOrganizatio</h4>
+```bash
+php /usr/src/elxmtapi/example/ShowOrganization.php
+```
+![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_7.png)
+
 <h4>8- ChangeStateOrganization</h4>
 ```bash
 php /usr/src/elxmtapi/example/ChangeStateOrganization.php
@@ -99,7 +105,7 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 | 404      | CreateOrganization | Creation organization completed successfully.|
 | 405      | ChangeStateOrganization| Change State 'suspend/unsuspend/terminate' completed successfully.|
 | 406      | DeleteOrganization | Delete Organization completed successfully.|
-| 407      |  - | - |
+| 407      | ShowOrganization | return array |
 | 408      |  - | - |
 | 409      |  - | - |
 | 410      |  - | - |
@@ -118,5 +124,5 @@ php /usr/src/elxmtapi/example/ChangeStateOrganization.php
 | 507      | ChangeStateOrganization | Required Field: Domain incorrect,Invalid Organization State|
 | 508      | DeleteOrganization | Required Field: Domain incorrect|
 | 509      | DeleteOrganization | Domain not found. |
-| 510      | - | - |
-
+| 510      | ShowOrganization | Required Field: Invalid Organization State. Argument: all, active, suspend, terminate |
+| 511      | ShowOrganization | No Matches found. |
