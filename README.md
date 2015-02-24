@@ -79,7 +79,7 @@ php /usr/src/elxmtapi/example/DeleteOrganization.php
 ```
 ![ScreenShot](https://raw.githubusercontent.com/lordbasex/elxmtapi/master/screenshot/example_6.png)
 
-<h4>7- ShowOrganizatio</h4>
+<h4>7- ShowOrganization</h4>
 ```bash
 php /usr/src/elxmtapi/example/ShowOrganization.php
 ```
