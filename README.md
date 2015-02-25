@@ -57,6 +57,7 @@ echo "INSERT INTO api_user (username, md5_password, create_date, last_login, min
   <li>DeleteOrganization</li>
   <li>ShowOrganization</li>
   <li>ChangeStateOrganization</li>
+  <li>ShowOrganizationResource</li>
 </ol>
 
 <h2>Example</h2>
